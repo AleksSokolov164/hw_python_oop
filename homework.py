@@ -144,7 +144,7 @@ def read_package(workout_type: str, data: list) -> Training:
     type_training = {'RUN': Running, 'SWM': Swimming, 'WLK': SportsWalking}
     try:
         read_package_rez = type_training[workout_type](*data)
-    except Exception as exc:
+    except Exception:
         raise ValueError("Несоответствующее значение кода тренировки")
     return read_package_rez
 
